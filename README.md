@@ -1,2 +1,142 @@
-# LyricBinder-releases
-LyricBinder — public releases &amp; installers (source is private)
+<div align="center">
+
+<!-- Replace with your logo/wordmark. Recommended ~480px wide, transparent PNG. -->
+<img src="assets/logo.png" alt="LyricBinder" width="420">
+
+### Your lyrics, synced to the transport — right inside your DAW.
+
+LyricBinder turns lyrics you already wrote — a Markdown file, or a Google Doc —
+into a live, auto-scrolling display that follows your session's playhead. Map
+each section to a bar, hit play, and the words keep pace with the music.
+
+[**⬇ Download the latest beta**](https://github.com/ttpenguins/LyricBinder-releases/releases/latest) &nbsp;·&nbsp; [Install guide](#-installing-the-beta) &nbsp;·&nbsp; [Features](#-features)
+
+<!-- Hero shot: the Singer view scrolling during playback is the strongest first impression. -->
+<img src="assets/hero.png" alt="LyricBinder following playback in a DAW" width="820">
+
+</div>
+
+---
+
+## What it is
+
+LyricBinder is a lightweight **VST3 plugin** that reads your DAW's transport —
+bar, beat, tempo, play state — and shows the right lyrics at the right moment. It
+does **not** process audio and adds no latency to your signal path. Think of it
+as a teleprompter that knows exactly where you are in the song.
+
+You keep authoring lyrics wherever you already do. LyricBinder watches the file
+and updates the moment you save — no re-importing, no copy-paste.
+
+---
+
+## ✨ Features
+
+### 🎵 Follows your playhead
+Reads bar/beat/tempo straight from the host. The current section scrolls into view
+as playback moves through the arrangement, and catches up within about a second and
+a half no matter where you jump.
+
+<img src="assets/feature-follow.png" alt="Playback following the current section" width="720">
+
+### 📝 Bring your own lyrics
+Point it at a **Markdown file** on disk, or connect a **Google Doc**. Sections are
+just your `##` headings. Edit the source in your favourite editor and LyricBinder
+picks up the change live — it's watching the file, not a stale import.
+
+<img src="assets/feature-sources.png" alt="Linking a local file or a Google Doc" width="720">
+
+### 🎯 Map sections to bars
+In **Arrange** view, pin each section to where it lands in the song. Repeats are
+first-class — the same chorus can appear at several bars — and anything left
+unmapped is flagged so nothing silently falls out of sync.
+
+<img src="assets/feature-arrange.png" alt="Mapping sections to bars in Arrange view" width="720">
+
+### 🎤 Singer view (a real teleprompter)
+A big, clean, distraction-free display for tracking vocals. Bump the font size,
+switch to full-song mode, or **pop it out into its own window** and drag it to a
+second screen or an iPad-as-display.
+
+<img src="assets/feature-singer.png" alt="Singer view teleprompter, popped out to its own window" width="720">
+
+### 🧭 Three ways to work
+| View | For |
+|------|-----|
+| **Compact** | Everyday tracking in a small plugin window |
+| **Arrange** | Mapping sections to bars, spotting orphans |
+| **Singer** | Full-screen teleprompter, inline or detached |
+
+### 🎨 Fits your setup
+Light and dark themes, adjustable heading levels, and a "clean text" toggle that
+renders Markdown as plain lyrics when you don't want to see the formatting.
+
+### 🔔 Stays current
+An in-plugin notice tells you when a new beta is available and links straight to
+the download — the plugin never installs anything itself.
+
+### 🔒 Private by default
+Optional, anonymous usage stats are **off unless you turn them on**, and can be
+switched back off any time from **About**. They never include your lyrics, file
+names, or account — see [Privacy](#-privacy) below.
+
+---
+
+## ⬇ Installing the beta
+
+> **Heads up:** this beta is **unsigned**, so macOS will block it on first launch.
+> That's expected — the steps below get you past it.
+
+**Requirements:** macOS 15 (Sequoia) or later · Apple Silicon or Intel · any
+**VST3** host (Cubase, Ableton Live, Reaper, Studio One). *Logic Pro support (AU)
+is planned but not in this beta.*
+
+1. Download **`LyricBinder_<version>_unsigned.pkg`** from the
+   [latest release](https://github.com/ttpenguins/LyricBinder-releases/releases/latest).
+2. Double-click it. macOS will refuse it the first time — this is the unsigned-app
+   warning, not a real problem.
+3. Open **System Settings → Privacy & Security**, scroll to the bottom, and click
+   **Open Anyway** next to the LyricBinder message.
+4. Run the installer again; it now completes.
+5. Rescan plugins in your DAW and add **LyricBinder** on any track.
+
+<img src="assets/install-gatekeeper.png" alt="Clicking Open Anyway in Privacy and Security" width="560">
+
+The installer includes the plugin and an uninstaller. To remove LyricBinder, run
+the bundled uninstaller.
+
+---
+
+## 🚀 Quick start
+
+1. Add LyricBinder to a track and open its window.
+2. Click **Link** and choose a Markdown file (or connect a Google Doc). Use `##`
+   for each section heading.
+3. Switch to **Arrange** and map your sections to their bars.
+4. Turn on **Follow**, press play, and watch the lyrics track the transport.
+5. For live tracking, open **Singer** view and pop it out to a second screen.
+
+---
+
+## 🔒 Privacy
+
+LyricBinder can share a small, anonymous record of *which features get used* — for
+example, that a file was linked or the Singer view was opened — to help guide what
+gets built next. It is **opt-in**: nothing is sent unless you say yes, and you can
+turn it off again any time from **About**.
+
+It **never** sends your lyrics, section names, file names or paths, your Google
+account, or any document contents. You're identified only by a random ID generated
+on your machine, which is deleted if you opt out. Analytics data is stored in the
+United States.
+
+---
+
+## Status
+
+LyricBinder is in **open beta** on macOS (VST3). Coming next: Apple notarization
+(no more Gatekeeper dance), an Audio Unit build for Logic Pro, and a Windows
+version.
+
+*Source is maintained privately; this repository hosts the public releases and
+installers.*
