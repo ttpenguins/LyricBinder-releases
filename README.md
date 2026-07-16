@@ -84,23 +84,21 @@ names, or account — see [Privacy](#-privacy) below.
 
 ## ⬇ Installing the beta
 
-> **Heads up:** this beta is **unsigned**, so macOS will block it on first launch.
-> That's expected — the steps below get you past it.
+LyricBinder is signed and notarized by Apple, so it installs like any other Mac
+app — no security workarounds needed.
 
 **Requirements:** macOS 15 (Sequoia) or later · Apple Silicon or Intel · any
 **VST3** host (Cubase, Ableton Live, Reaper, Studio One). *Logic Pro support (AU)
 is planned but not in this beta.*
 
-1. Download **`LyricBinder_<version>_unsigned.pkg`** from the
+1. Download **`LyricBinder_<version>.pkg`** from the
    [latest release](https://github.com/ttpenguins/LyricBinder-releases/releases/latest).
-2. Double-click it. macOS will refuse it the first time — this is the unsigned-app
-   warning, not a real problem.
-3. Open **System Settings → Privacy & Security**, scroll to the bottom, and click
-   **Open Anyway** next to the LyricBinder message.
-4. Run the installer again; it now completes.
-5. Rescan plugins in your DAW and add **LyricBinder** on any track.
+2. Double-click it and follow the prompts. You'll be asked to authenticate, since
+   the plugin installs to a system folder.
+3. Rescan plugins in your DAW and add **LyricBinder** on any track.
 
-<img src="assets/install-gatekeeper.png" alt="Clicking Open Anyway in Privacy and Security" width="560">
+If macOS blocks the installer or says it can't verify the developer, that's not
+expected — re-download it and, if it happens again, let us know.
 
 The installer includes the plugin and an uninstaller. To remove LyricBinder, run
 the bundled uninstaller.
@@ -134,9 +132,8 @@ United States.
 
 ## Status
 
-LyricBinder is in **open beta** on macOS (VST3). Coming next: Apple notarization
-(no more Gatekeeper dance), an Audio Unit build for Logic Pro, and a Windows
-version.
+LyricBinder is in **open beta** on macOS (VST3), signed and notarized by Apple.
+Coming next: an Audio Unit build for Logic Pro, and a Windows version.
 
 *Source is maintained privately; this repository hosts the public releases and
 installers.*
