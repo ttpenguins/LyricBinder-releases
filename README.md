@@ -20,7 +20,7 @@ each section to a bar, hit play, and the words keep pace with the music.
 
 ## What it is
 
-LyricBinder is a lightweight **VST3 plugin** that reads your DAW's transport —
+LyricBinder is a lightweight **VST3 and AU plugin** that reads your DAW's transport —
 bar, beat, tempo, play state — and shows the right lyrics at the right moment. It
 does **not** process audio and adds no latency to your signal path. Think of it
 as a teleprompter that knows exactly where you are in the song.
@@ -35,9 +35,21 @@ and updates the moment you save — no re-importing, no copy-paste.
 ### 🎵 Follows your playhead
 Reads bar/beat/tempo straight from the host. The current section scrolls into view
 as playback moves through the arrangement, and catches up within about a second and
-a half no matter where you jump.
+a half no matter where you jump. Autoscroll setup lets you dial in a marker offset
+(switch focus to the upcoming section a little early) and a scroll speed —
+Immediate, Fast, Medium, or Slow.
 
 <img src="assets/feature-follow.png" alt="Playback following the current section" width="720">
+
+### 🎹 MIDI-driven Follow Modes (BETA)
+Go beyond section-level tracking: send keyswitches (or just play the melody) to
+highlight the exact line — or the exact word — the singer should be on next, with
+a dedicated Clear Highlight keyswitch to hide it mid-section without losing your
+place. Verified in Cubase; Logic Pro receives it via LyricBinder's AU Music Effect
+routing. Ableton Live's audio inserts can't receive MIDI at all, so Live gets
+section-level Marker mode only — that's a Live limitation, not a LyricBinder one.
+
+<img src="assets/feature-followmodes.png" alt="Follow Modes keyswitch setup and word/line highlighting" width="720">
 
 ### 📝 Bring your own lyrics
 Point it at a **Markdown file** on disk, or connect a **Google Doc**. Sections are
@@ -47,11 +59,13 @@ picks up the change live — it's watching the file, not a stale import.
 <img src="assets/feature-sources.png" alt="Linking a local file or a Google Doc" width="720">
 
 ### 🎯 Map sections to bars
-In **Arrange** view, pin each section to where it lands in the song. Repeats are
-first-class — the same chorus can appear at several bars — and anything left
-unmapped is flagged so nothing silently falls out of sync.
+Toggle **Edit mapping** in the Overview rail to pin each section to where it lands
+in the song. Repeats are supported — the same chorus can appear at several bars —
+and anything left unmapped is flagged so nothing silently falls out of sync. Drag
+the rail divider to resize, zoom the lyric text independently of the rail, and use
+Insert/Cut Time to shift or remove a run of markers in one move.
 
-<img src="assets/feature-arrange.png" alt="Mapping sections to bars in Arrange view" width="720">
+<img src="assets/feature-arrange.png" alt="Mapping sections to bars in the Overview rail" width="720">
 
 ### 🎤 Singer view (a real teleprompter)
 A big, clean, distraction-free display for tracking vocals. Bump the font size,
@@ -60,16 +74,19 @@ second screen or an iPad-as-display.
 
 <img src="assets/feature-singer.png" alt="Singer view teleprompter, popped out to its own window" width="720">
 
-### 🧭 Three ways to work
+### 🧭 Two ways to work
 | View | For |
 |------|-----|
-| **Compact** | Everyday tracking in a small plugin window |
-| **Arrange** | Mapping sections to bars, spotting orphans |
+| **Overview** | Everyday tracking in a small plugin window, allows mapping of sections |
 | **Singer** | Full-screen teleprompter, inline or detached |
 
 ### 🎨 Fits your setup
 Light and dark themes, adjustable heading levels, and a "clean text" toggle that
 renders Markdown as plain lyrics when you don't want to see the formatting.
+
+### 💾 Tracks unsaved changes
+Mapping edits, source changes, and display tweaks mark your host project dirty,
+so your DAW prompts you to save before closing — nothing gets lost silently.
 
 ### 🔔 Stays current
 An in-plugin notice tells you when a new beta is available and links straight to
@@ -87,15 +104,15 @@ names, or account — see [Privacy](#-privacy) below.
 LyricBinder is signed and notarized by Apple, so it installs like any other Mac
 app — no security workarounds needed.
 
-**Requirements:** macOS 15 (Sequoia) or later · Apple Silicon or Intel · any
-**VST3** host (Cubase, Ableton Live, Reaper, Studio One). *Logic Pro support (AU)
-is planned but not in this beta.*
+**Requirements:** macOS 15 (Sequoia) or later · Apple Silicon or Intel · a
+**VST3** host (Cubase, Ableton Live, Reaper, Studio One) or an **AU** host
+(Logic Pro, GarageBand). *Windows and AAX are not in this beta.*
 
 1. Download **`LyricBinder_<version>.pkg`** from the
    [latest release](https://github.com/ttpenguins/LyricBinder-releases/releases/latest).
 2. Double-click it and follow the prompts. You'll be asked to authenticate, since
    the plugin installs to a system folder.
-3. Rescan plugins in your DAW and add **LyricBinder** on any track.
+3. Rescan plugins in your DAW and add **LyricBinder** on any track (i.e. Lead Vocal).
 
 If macOS blocks the installer or says it can't verify the developer, that's not
 expected — re-download it and, if it happens again, let us know.
@@ -110,9 +127,11 @@ the bundled uninstaller.
 1. Add LyricBinder to a track and open its window.
 2. Click **Link** and choose a Markdown file (or connect a Google Doc). Use `##`
    for each section heading.
-3. Switch to **Arrange** and map your sections to their bars.
+3. Click **Edit mapping** and map your sections to their bars.
 4. Turn on **Follow**, press play, and watch the lyrics track the transport.
 5. For live tracking, open **Singer** view and pop it out to a second screen.
+6. Want line- or word-level highlighting? Open the gear menu → **Follow** and
+   pick a Keyswitch or Melody mode.
 
 ---
 
@@ -132,8 +151,8 @@ United States.
 
 ## Status
 
-LyricBinder is in **open beta** on macOS (VST3), signed and notarized by Apple.
-Coming next: an Audio Unit build for Logic Pro, and a Windows version.
+LyricBinder is in **open beta** on macOS (VST3, AU), signed and notarized by
+Apple. Coming next: AAX and Windows versions.
 
 *Source is maintained privately; this repository hosts the public releases and
 installers.*
