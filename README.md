@@ -53,8 +53,9 @@ section-level Marker mode only — that's a Live limitation, not a LyricBinder o
 
 ### 📝 Bring your own lyrics
 Point it at a **Markdown file** on disk, or connect a **Google Doc**. Sections are
-just your `##` headings. Edit the source in your favourite editor and LyricBinder
-picks up the change live — it's watching the file, not a stale import.
+just your `##` headings. Edit the source in your favourite editor (or use the simple included
+editor to make changes in the plugin) and LyricBinder picks up the change live — it's watching 
+the file, not a stale import.
 
 <img src="assets/feature-sources.png" alt="Linking a local file or a Google Doc" width="720">
 
